@@ -1,14 +1,14 @@
 export const qcm1 = {
   id: 1,
-  question: "Question 1",
-  answers: ["Answer 1 A", "Answer 1 B", "Answer 1 C", "Answer 1 D"],
+  question: "Quelle est la probabilité de rencontrer des complications suite à l'appendicectomie ?",
+  answers: ["Faible", "Presque inexistante", "Modérée", "Très élevée"],
   correctAnswer: 0,
 };
 
 export const qcm2 = {
   id: 2,
-  question: "Question 2",
-  answers: ["Answer 2 A", "Answer 2 B", "Answer 2 C", "Answer 2 D"],
+  question: "Quelle est la durée typique de l'opération d'appendicectomie ?",
+  answers: ["1 heure", "3 heures", "2 heures", "30 minutes"],
   correctAnswer: 3,
 };
 

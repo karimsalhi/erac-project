@@ -143,7 +143,7 @@ export default function Qcm() {
               onChange={(e) => setInput(e.target.value)}
               value={input}
             />
-            <Button onClick={handleInputClick}>Submit</Button>
+            <Button onClick={handleInputClick}>Soumettre</Button>
           </>
         )}
         {counter === 0 && (
@@ -152,8 +152,8 @@ export default function Qcm() {
             <Button onClick={handleNext}>Suivant</Button>
           </>
         )}
-        {correct === "True" && <Alert severity="success">Correct answer</Alert>}
-        {correct === "False" && <Alert severity="error">Wrong answer</Alert>}
+        {correct === "True" && <Alert severity="success">Bonne Réponse</Alert>}
+        {correct === "False" && <Alert severity="error">Mauvaise Réponse</Alert>}
       </List>
     </Grid>
   );

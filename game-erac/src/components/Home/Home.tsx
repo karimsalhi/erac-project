@@ -43,13 +43,13 @@ export default function Home() {
             sx={{ marginTop: "2rem" }}
             onClick={() => navigate("/appendicite")}
           >
-            <ListItemText primary="Sodomie" />
+            <ListItemText primary="Césarienne" />
           </ListItemButton>
           <ListItemButton
             sx={{ marginTop: "2rem" }}
             onClick={() => navigate("/appendicite")}
           >
-            <ListItemText primary="Fellation" />
+            <ListItemText primary="Scoliose" />
           </ListItemButton>
         </List>
       </Grid>

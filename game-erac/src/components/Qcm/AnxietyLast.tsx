@@ -28,7 +28,7 @@ export default function AnxietyLast() {
         component="nav"
         aria-label="mailbox folders"
       >
-        <Typography variant="h3">Votre Anxiety</Typography>
+        <Typography variant="h3">Sur une échelle de 1 à 10 combien êtes-vous anxieux(se)?</Typography>
         <Box sx={{ width: 300 }}>
           <Slider
             aria-label="Temperature"
