@@ -14,7 +14,7 @@ const style = {
   border: "2px solid #000",
   boxShadow: 24,
   p: 4,
-  borderRadius: "5%",
+borderRadius: "5%",
 };
 
 export default function CorrectionModal(id) {
@@ -24,14 +24,7 @@ export default function CorrectionModal(id) {
 
   return (
     <div>
-      <Button
-                  className="button-lower"
-                  variant="contained"
-                  color="primary"
-                  onClick={handleOpen}
-                >
-                  La reponse
-                </Button>
+      <Button onClick={handleOpen}>La reponse</Button>
       {id.id === "1" && (
         <Modal
           open={open}
