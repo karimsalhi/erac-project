@@ -62,6 +62,7 @@ export default function Qcm() {
           width: "100%",
           maxWidth: 360,
           bgcolor: "background.paper",
+          borderRadius: "5%",
         }}
         component="nav"
         aria-label="mailbox folders"
