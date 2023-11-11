@@ -6,10 +6,12 @@ import Anxiety from "./components/Qcm/Anxiety";
 import AnxietyLast from "./components/Qcm/AnxietyLast";
 import Result from "./components/Appendicite/Result/Result";
 import LoadingStart from "./components/LoadingStart/LoadingStart";
+import Layout from "./components/Layout/Layout";
 
 const router = createBrowserRouter([
   {
     path: "/",
+    element: <Layout />,
     children: [
       {
         path: "",
