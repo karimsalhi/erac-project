@@ -13,10 +13,12 @@ import {
   Typography,
   Box,
   Toolbar,
+  InputAdornment,
 } from "@mui/material";
 import { CountdownCircleTimer } from "react-countdown-circle-timer";
 import CorrectionModal from "../CorrectionModal/CorrectionModal";
 import { styled } from "@mui/material/styles";
+import PercentIcon from "@mui/icons-material/Percent";
 
 type Qcm = {
   id: number;
@@ -176,20 +178,31 @@ export default function Qcm() {
                   Quel est le taux de réussite d'une appendicectomie ?
                 </Typography>
                 <TextField
+                  sx={{ margin: "1rem" }}
                   id="outlined-basic"
-                  label="Outlined"
+                  label="Réponse"
                   variant="outlined"
                   onChange={(e) => setInput(e.target.value)}
                   value={input}
+                  InputProps={{
+                    endAdornment: (
+                      <InputAdornment position="end">
+                        <PercentIcon />
+                      </InputAdornment>
+                    ),
+                  }}
                 />
-                <Button
-                  className="button-lower"
-                  variant="contained"
-                  color="primary"
-                  onClick={handleInputClick}
-                >
-                  Soumettre
-                </Button>
+                {counter > 0 && (
+                  <Button
+                    sx={{ margin: "1rem" }}
+                    className="button-lower"
+                    variant="contained"
+                    color="primary"
+                    onClick={handleInputClick}
+                  >
+                    Soumettre
+                  </Button>
+                )}
               </>
             )}
             {counter === 0 && (
