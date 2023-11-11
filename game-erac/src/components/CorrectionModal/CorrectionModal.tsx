@@ -24,7 +24,14 @@ export default function CorrectionModal(id) {
 
   return (
     <div>
-      <Button onClick={handleOpen}>La reponse</Button>
+      <Button
+                  className="button-lower"
+                  variant="contained"
+                  color="primary"
+                  onClick={handleOpen}
+                >
+                  La reponse
+                </Button>
       {id.id === "1" && (
         <Modal
           open={open}
