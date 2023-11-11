@@ -21,7 +21,7 @@ export default function Home() {
           alignItems: "center",
           justifyContent: "center",
         }}
-        style={{ minHeight: "100vh" }}
+        style={{ minHeight: "70vh" }}
       >
         <List
           className="question-list"

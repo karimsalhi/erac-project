@@ -15,7 +15,7 @@ import {
 } from "@mui/material";
 import { CountdownCircleTimer } from "react-countdown-circle-timer";
 import CorrectionModal from "../CorrectionModal/CorrectionModal";
-import { styled } from '@mui/material/styles';
+import { styled } from "@mui/material/styles";
 
 type Qcm = {
   id: number;
@@ -25,14 +25,14 @@ type Qcm = {
 };
 
 const StyledPaper = styled(Paper)(({ theme }) => ({
-  width: '100%',
+  width: "100%",
   maxWidth: 360,
   margin: theme.spacing(2),
   padding: theme.spacing(2),
   backgroundColor: theme.palette.background.paper,
   boxShadow: theme.shadows[5],
   borderRadius: theme.shape.borderRadius,
-  '&:hover': {
+  "&:hover": {
     boxShadow: theme.shadows[10],
   },
 }));
@@ -100,73 +100,88 @@ export default function Qcm() {
   };
 
   return (
-    <Grid container sx={{ spacing: 0, direction: "column", alignItems: "center", justifyContent: "center" }} style={{ minHeight: "100vh" }}>
-      <Box sx={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
+    <Grid
+      container
+      sx={{
+        spacing: 0,
+        direction: "column",
+        alignItems: "center",
+        justifyContent: "center",
+      }}
+      style={{ minHeight: "100vh" }}
+    >
+      <Box sx={{ width: "100%", display: "flex", justifyContent: "center" }}>
         <StyledPaper elevation={3}>
           <List component="nav" aria-label="mailbox folders">
-          {counter > 0 && (
-          <CountdownCircleTimer
-            isPlaying
-            duration={maxTime}
-            colors={["#004777", "#F7B801", "#A30000", "#A30000"]}
-            colorsTime={[(maxTime * 3) / 4, maxTime / 2, maxTime / 4, 0]}
-            size={100}
-            onComplete={() => {
-              setCounter(0);
-              return;
-            }}
-          >
-            {({ remainingTime }) => remainingTime}
-          </CountdownCircleTimer>
-        )}
-        {id !== "3" ? (
-          <>
-            <Typography variant="h4">{qcm.question}</Typography>
-            {qcm.answers.map((answer, index) => (
-              <ListItemButton
-                key={index}
-                sx={{ marginTop: "2rem" }}
-                selected={selectedIndex === index}
-                onClick={(event) => handleClick(event, index)}
+            {counter > 0 && (
+              <CountdownCircleTimer
+                isPlaying
+                duration={maxTime}
+                colors={["#004777", "#F7B801", "#A30000", "#A30000"]}
+                colorsTime={[(maxTime * 3) / 4, maxTime / 2, maxTime / 4, 0]}
+                size={100}
+                onComplete={() => {
+                  setCounter(0);
+                  return;
+                }}
               >
-                <ListItemText primary={answer} />
-              </ListItemButton>
-            ))}
-          </>
-        ) : (
-          <>
-            <Typography variant="h4">
-              Quel est le taux de réussite d'une appendicectomie ?
-            </Typography>
-            <TextField
-              id="outlined-basic"
-              label="Outlined"
-              variant="outlined"
-              onChange={(e) => setInput(e.target.value)}
-              value={input}
-            />
-            <Button
-  className="button-lower"
-  variant="contained"
-  color="primary"
-  onClick={handleInputClick}>
-  Soumettre
-</Button>
-          </>
-        )}
-        {counter === 0 && (
-          <>
-            <CorrectionModal id={id} />
-            <Button
-          variant="contained"
-          color="primary"
-          onClick={(handleNext)}>Suivant</Button>
-          </>
-        )}
-        {correct === "True" && <Alert severity="success">Bonne Réponse</Alert>}
-        {correct === "False" && (
-          <Alert severity="error">Mauvaise Réponse</Alert>
-        )}
+                {({ remainingTime }) => remainingTime}
+              </CountdownCircleTimer>
+            )}
+            {id !== "3" ? (
+              <>
+                <Typography variant="h4">{qcm.question}</Typography>
+                {qcm.answers.map((answer, index) => (
+                  <ListItemButton
+                    key={index}
+                    sx={{ marginTop: "2rem" }}
+                    selected={selectedIndex === index}
+                    onClick={(event) => handleClick(event, index)}
+                  >
+                    <ListItemText primary={answer} />
+                  </ListItemButton>
+                ))}
+              </>
+            ) : (
+              <>
+                <Typography variant="h4">
+                  Quel est le taux de réussite d'une appendicectomie ?
+                </Typography>
+                <TextField
+                  id="outlined-basic"
+                  label="Outlined"
+                  variant="outlined"
+                  onChange={(e) => setInput(e.target.value)}
+                  value={input}
+                />
+                <Button
+                  className="button-lower"
+                  variant="contained"
+                  color="primary"
+                  onClick={handleInputClick}
+                >
+                  Soumettre
+                </Button>
+              </>
+            )}
+            {counter === 0 && (
+              <>
+                <CorrectionModal id={id} />
+                <Button
+                  variant="contained"
+                  color="primary"
+                  onClick={handleNext}
+                >
+                  Suivant
+                </Button>
+              </>
+            )}
+            {correct === "True" && (
+              <Alert severity="success">Bonne Réponse</Alert>
+            )}
+            {correct === "False" && (
+              <Alert severity="error">Mauvaise Réponse</Alert>
+            )}
           </List>
         </StyledPaper>
       </Box>

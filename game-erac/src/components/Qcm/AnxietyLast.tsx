@@ -16,7 +16,7 @@ export default function AnxietyLast() {
         alignItems: "center",
         justifyContent: "center",
       }}
-      style={{ minHeight: "100vh" }}
+      style={{ minHeight: "70vh" }}
     >
       <List
         sx={{
@@ -28,7 +28,9 @@ export default function AnxietyLast() {
         component="nav"
         aria-label="mailbox folders"
       >
-        <Typography variant="h4">Sur une échelle de 1 à 10 combien êtes-vous anxieux(se)?</Typography>
+        <Typography variant="h4">
+          Sur une échelle de 1 à 10 combien êtes-vous anxieux(se)?
+        </Typography>
         <Box sx={{ width: 300 }}>
           <Slider
             aria-label="Temperature"
