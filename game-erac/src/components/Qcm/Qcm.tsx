@@ -111,8 +111,25 @@ export default function Qcm() {
       }}
       style={{ minHeight: "70vh" }}
     >
-      <Box sx={{ width: "100%", display: "flex", justifyContent: "center" }}>
-        <StyledPaper elevation={3}>
+      <Box
+        sx={{
+          width: "100%",
+          display: "flex",
+          justifyContent: "center",
+        }}
+      >
+        <StyledPaper
+          elevation={3}
+          sx={{
+            width: "100%",
+            maxWidth: 360,
+            bgcolor: "rgba(255, 255, 255, 0.85)",
+            borderRadius: 2,
+            boxShadow: 3,
+            padding: 4,
+            textAlign: "center",
+          }}
+        >
           <List component="nav" aria-label="mailbox folders">
             {counter > 0 && (
               <Box sx={{ display: "flex", justifyContent: "center" }}>
@@ -146,7 +163,10 @@ export default function Qcm() {
                     selected={selectedIndex === index}
                     onClick={(event) => handleClick(event, index)}
                   >
-                    <ListItemText primary={answer} />
+                    <ListItemText
+                      primaryTypographyProps={{ fontSize: "1.125rem" }}
+                      primary={answer}
+                    />
                   </ListItemButton>
                 ))}
               </>
