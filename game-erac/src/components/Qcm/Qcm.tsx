@@ -75,7 +75,7 @@ export default function Qcm() {
   };
 
   const handleInputClick = () => {
-    if (input == "30") {
+    if (input == "95") {
       setCorrect("True");
       setCounter(0);
     } else {
@@ -121,7 +121,7 @@ export default function Qcm() {
         )}
         {id !== "3" ? (
           <>
-            <Typography variant="h2">{qcm.question}</Typography>
+            <Typography variant="h4">{qcm.question}</Typography>
             {qcm.answers.map((answer, index) => (
               <ListItemButton
                 key={index}
@@ -135,7 +135,7 @@ export default function Qcm() {
           </>
         ) : (
           <>
-            <Typography variant="h2">Question</Typography>
+            <Typography variant="h4">Quel est le taux de réussite d'une appendicectomie ?</Typography>
             <TextField
               id="outlined-basic"
               label="Outlined"

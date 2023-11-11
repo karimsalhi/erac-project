@@ -28,7 +28,7 @@ export default function Home() {
           component="nav"
           aria-label="mailbox folders"
         >
-          <Typography variant="h2" className="question-title">Choisis ton thème</Typography>
+          <Typography variant="h3" className="question-title">Type d'intervention</Typography>
           <ListItemButton
           className="question-button"
             onClick={() => navigate("/appendicite")}

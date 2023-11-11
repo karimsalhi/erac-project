@@ -25,28 +25,11 @@ export default function Appendicite() {
         aria-label="mailbox folders"
       >
         <Typography>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
-          at erat eu ipsum molestie elementum sed ut nunc. Donec et tellus ut
-          massa viverra placerat eu et nibh. Morbi condimentum ipsum vitae velit
-          sollicitudin blandit. Phasellus in lorem odio. Quisque nec velit
-          lobortis arcu pretium iaculis dignissim nec justo. Nam nunc ante,
-          tincidunt et mollis vel, sagittis at neque. Sed dignissim, erat ac
-          malesuada commodo, tortor ex viverra nulla, non tempor nulla turpis
-          non quam. Nullam et viverra ipsum. Curabitur porta sem vel velit
-          placerat, vel blandit augue dapibus. Phasellus porta accumsan risus,
-          in lacinia urna accumsan sit amet. Cras malesuada pharetra leo, ut
-          ultrices odio pulvinar eu. Integer venenatis malesuada urna, sit amet
-          sodales turpis pharetra ac. Donec arcu tortor, vestibulum et justo
-          quis, imperdiet feugiat augue. Vestibulum finibus ante eget justo
-          iaculis scelerisque. Curabitur molestie elementum neque a facilisis.
-          Donec consectetur purus et volutpat posuere. Aenean at interdum nisl.
-          Ut pharetra justo elit, ut suscipit mi facilisis eget. Nam mi ex,
-          vulputate vel tortor bibendum, tempus ornare eros. Donec varius augue
-          congue dolor semper tempus aliquet ut magna. Etiam mollis metus nec
-          libero interdum, quis cursus elit rutrum. Donec lacinia sapien eu
-          purus vehicula convallis. Sed porttitor venenatis justo ut laoreet.
+        L'appendicectomie est une intervention chirurgicale qui consiste à retirer l'appendice, une petite structure en forme de tube située dans le bas de l'abdomen. Cet organe ne remplit aucune fonction essentielle, mais il peut parfois devenir enflammé et provoquer des douleurs.<br/><br/> L'opération vise à résoudre ce problème.
+
+Pendant l'appendicectomie, vous serez endormi sous anesthésie générale, vous ne ressentirez donc aucune douleur ni inconfort. Le chirurgien pratiquera une petite incision dans votre abdomen pour accéder à l'appendice. Ensuite, il retirera l'appendice problématique <br/><br/>Montez dans l'aventure avec nous en répondant à ce Quizz et essaie de repondre au plus vite pour être parmi les meilleurs.<br/>
         </Typography>
-        <Button onClick={() => navigate("/qcm/anxiety")}>Commencer</Button>
+        <Button onClick={() => navigate("/qcm/anxiety")}>Commencer Le Quizz</Button>
       </List>
     </Grid>
   );
