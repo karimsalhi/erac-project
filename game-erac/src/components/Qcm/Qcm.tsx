@@ -65,6 +65,7 @@ export default function Qcm() {
             duration={maxTime}
             colors={["#004777", "#F7B801", "#A30000", "#A30000"]}
             colorsTime={[(maxTime * 3) / 4, maxTime / 2, maxTime / 4, 0]}
+            size={100}
             onComplete={() => {
               setCounter(0);
               return;
