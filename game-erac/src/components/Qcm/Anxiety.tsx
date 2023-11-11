@@ -52,7 +52,7 @@ export default function Anxiety() {
         <Button 
           variant="contained" 
           color="primary" 
-          onClick={() => navigate("/qcm/1")}
+          onClick={() => navigate("/loading-start")}
           sx={{ marginTop: 4 }}
         >
           Suivant

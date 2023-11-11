@@ -5,6 +5,7 @@ import Appendicite from "./components/Appendicite/Appendicite";
 import Anxiety from "./components/Qcm/Anxiety";
 import AnxietyLast from "./components/Qcm/AnxietyLast";
 import Result from "./components/Appendicite/Result/Result";
+import LoadingStart from "./components/LoadingStart/LoadingStart";
 
 const router = createBrowserRouter([
   {
@@ -17,6 +18,10 @@ const router = createBrowserRouter([
       {
         path: "/appendicite",
         element: <Appendicite />,
+      },
+      {
+        path: "/loading-start",
+        element: <LoadingStart />,
       },
       {
         path: "qcm/:id",
