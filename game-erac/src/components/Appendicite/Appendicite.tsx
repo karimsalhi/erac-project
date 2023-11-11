@@ -1,11 +1,4 @@
-import {
-  Grid,
-  List,
-  Typography,
-  ListItemButton,
-  ListItemText,
-  Button,
-} from "@mui/material";
+import { Grid, List, Typography, Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 
 export default function Appendicite() {
@@ -53,7 +46,7 @@ export default function Appendicite() {
           libero interdum, quis cursus elit rutrum. Donec lacinia sapien eu
           purus vehicula convallis. Sed porttitor venenatis justo ut laoreet.
         </Typography>
-        <Button onClick={() => navigate("/qcm/1")}>Commencer</Button>
+        <Button onClick={() => navigate("/qcm/anxiety")}>Commencer</Button>
       </List>
     </Grid>
   );

@@ -30,8 +30,9 @@ export default function Qcm() {
       setCounter(maxTime);
       setQcm(qcm2);
     } else if (id === "3") {
-      setCounter(maxTime);
-      setQcm(qcm3);
+      navigate("/qcm/form");
+    } else if (id === "4") {
+      navigate("/qcm/anxiety");
     }
     counter > 0 && setTimeout(() => setCounter(counter - 1), 1000);
   }, [id]);
