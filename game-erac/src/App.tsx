@@ -3,6 +3,8 @@ import Home from "./components/Home/Home";
 import Qcm from "./components/Qcm/Qcm";
 import Appendicite from "./components/Appendicite/Appendicite";
 import Anxiety from "./components/Qcm/Anxiety";
+import AnxietyLast from "./components/Qcm/AnxietyLast";
+import Result from "./components/Appendicite/Result/Result";
 
 const router = createBrowserRouter([
   {
@@ -23,6 +25,14 @@ const router = createBrowserRouter([
       {
         path: "qcm/anxiety",
         element: <Anxiety />,
+      },
+      {
+        path: "qcm/anxiety-last",
+        element: <AnxietyLast />,
+      },
+      {
+        path: "result",
+        element: <Result />,
       },
     ],
   },

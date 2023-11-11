@@ -50,7 +50,7 @@ export default function Qcm() {
       setCounter(maxTime);
       setCorrect("");
     } else if (id === "4") {
-      navigate("/qcm/anxiety");
+      navigate("/qcm/anxiety-last");
     }
     counter > 0 && setTimeout(() => setCounter(counter - 1), 1000);
   }, [id]);
