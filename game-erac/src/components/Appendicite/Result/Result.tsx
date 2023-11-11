@@ -25,23 +25,23 @@ export default function Result() {
         component="nav"
         aria-label="mailbox folders"
       >
-        <Box sx={{ width: 300 }}>
-          <Typography variant="h6">
+        <Box>
+          <Typography variant="h5" sx={{ textAlign: "center" }}>
             Votre score est de
-            <Typography
-              variant="h5"
-              color="orange"
-              sx={{ alignItems: "center", justifyContent: "center" }}
-            >
+            <Typography variant="h4" color="orange">
               945
             </Typography>
             Bravo vous faites partie du top
-            <Typography variant="h5" color="purple">
+            <Typography variant="h4" color="purple">
               15%
             </Typography>
           </Typography>
         </Box>
-        <Button onClick={() => navigate("/")}>Aller au menu</Button>
+        <Grid sx={{ textAlign: "center" }}>
+          <Button variant="contained" onClick={() => navigate("/")}>
+            Aller au menu
+          </Button>
+        </Grid>
       </List>
     </Grid>
   );
