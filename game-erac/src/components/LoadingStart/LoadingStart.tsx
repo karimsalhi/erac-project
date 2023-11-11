@@ -6,7 +6,7 @@ import "./LoadingStart.css";
 const renderTime = ({ remainingTime }) => {
   return (
     <div className="timer">
-      <Typography variant="h4">Dans</Typography>
+      <Typography variant="h4">Début dans</Typography>
       <Typography variant="h4">{remainingTime}</Typography>
       <Typography variant="h4">Secondes</Typography>
     </div>
