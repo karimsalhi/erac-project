@@ -24,13 +24,15 @@ export default function Home() {
         style={{ minHeight: "100vh" }}
       >
         <List
-            className="question-list"
+          className="question-list"
           component="nav"
           aria-label="mailbox folders"
         >
-          <Typography variant="h3" className="question-title">Type d'intervention</Typography>
+          <Typography variant="h4" className="question-title">
+            Type d'intervention
+          </Typography>
           <ListItemButton
-          className="question-button"
+            className="question-button"
             onClick={() => navigate("/appendicite")}
           >
             <ListItemText primary="Appendicite" />
@@ -51,4 +53,4 @@ export default function Home() {
       </Grid>
     </div>
   );
-      }
+}

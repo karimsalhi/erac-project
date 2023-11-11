@@ -12,7 +12,7 @@ export default function Anxiety() {
       container
       sx={{
         height: "100vh",
-        backgroundImage: `url("../../../assets/game5.png")`,
+        backgroundImage: `url("../../../assets/game.jpg")`,
         backgroundSize: "cover",
         backgroundPosition: "center",
         direction: "column",

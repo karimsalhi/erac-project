@@ -9,7 +9,7 @@ export default function Appendicite() {
       container
       sx={{
         height: "100vh",
-        backgroundImage: `url("../../../assets/game5.png")`,
+        backgroundImage: `url("../../../assets/game.png")`,
         alignItems: "center",
         justifyContent: "center",
       }}
