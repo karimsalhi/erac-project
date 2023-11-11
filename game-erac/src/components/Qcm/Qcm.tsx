@@ -4,7 +4,7 @@ import ListItemText from "@mui/material/ListItemText";
 import { useParams } from "react-router-dom";
 import { qcm1, qcm2, qcm3 } from "../Data/QcmData/QcmData";
 import { useEffect, useState } from "react";
-import { Grid, Typography } from "@mui/material";
+import { Grid, ListItemButton, Typography } from "@mui/material";
 
 type Qcm = {
   id: number;
@@ -14,6 +14,8 @@ type Qcm = {
 
 export default function Qcm() {
   const [qcm, setQcm] = useState<Qcm>({ id: 0, question: "", answers: [] });
+  const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
+
   const params = useParams();
   const id = params.id;
   useEffect(() => {
@@ -25,6 +27,13 @@ export default function Qcm() {
       setQcm(qcm3);
     }
   }, [id]);
+
+  const handleClick = (
+    event: React.MouseEvent<HTMLDivElement, MouseEvent>,
+    index: number
+  ) => {
+    setSelectedIndex(index);
+  };
 
   return (
     <Grid
@@ -48,9 +57,14 @@ export default function Qcm() {
       >
         <Typography variant="h2">{qcm.question}</Typography>
         {qcm.answers.map((answer, index) => (
-          <ListItem button key={index} sx={{ marginTop: "2rem" }}>
+          <ListItemButton
+            key={index}
+            sx={{ marginTop: "2rem" }}
+            selected={selectedIndex === index}
+            onClick={(event) => handleClick(event, index)}
+          >
             <ListItemText primary={answer} />
-          </ListItem>
+          </ListItemButton>
         ))}
       </List>
     </Grid>
