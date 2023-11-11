@@ -33,7 +33,7 @@ export default function CorrectionModal(id) {
         >
           <Box sx={style}>
             <Typography id="modal-modal-title" variant="h6" component="h2">
-              Réponse correcte : C. Faible
+              Réponse correcte : Faible
             </Typography>
             <Typography id="modal-modal-title" variant="h6" component="h2">
               Explication
@@ -58,7 +58,7 @@ export default function CorrectionModal(id) {
         >
           <Box sx={style}>
             <Typography id="modal-modal-title" variant="h6" component="h2">
-              Réponse correcte : C. 30 minutes
+              Réponse correcte : 30 minutes
             </Typography>
             <Typography id="modal-modal-title" variant="h6" component="h2">
               Explication
@@ -83,7 +83,7 @@ export default function CorrectionModal(id) {
         >
           <Box sx={style}>
             <Typography id="modal-modal-title" variant="h6" component="h2">
-              Réponse correcte : D. 95%
+              Réponse correcte : 95%
             </Typography>
             <Typography id="modal-modal-title" variant="h6" component="h2">
               Explication
