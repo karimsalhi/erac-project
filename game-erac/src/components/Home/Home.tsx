@@ -14,6 +14,7 @@ export default function Home() {
     <div className="Home">
       <Grid
         container
+        className="home-grid"
         sx={{
           spacing: 0,
           direction: "column",
@@ -23,30 +24,25 @@ export default function Home() {
         style={{ minHeight: "100vh" }}
       >
         <List
-          sx={{
-            width: "100%",
-            maxWidth: 360,
-            bgcolor: "background.paper",
-            borderRadius: "5%",
-          }}
+            className="question-list"
           component="nav"
           aria-label="mailbox folders"
         >
-          <Typography variant="h2">Question</Typography>
+          <Typography variant="h2" className="question-title">Choisis ton thème</Typography>
           <ListItemButton
-            sx={{ marginTop: "2rem" }}
+          className="question-button"
             onClick={() => navigate("/appendicite")}
           >
             <ListItemText primary="Appendicite" />
           </ListItemButton>
           <ListItemButton
-            sx={{ marginTop: "2rem" }}
+            className="question-button"
             onClick={() => navigate("/appendicite")}
           >
             <ListItemText primary="Césarienne" />
           </ListItemButton>
           <ListItemButton
-            sx={{ marginTop: "2rem" }}
+            className="question-button"
             onClick={() => navigate("/appendicite")}
           >
             <ListItemText primary="Scoliose" />
@@ -55,4 +51,4 @@ export default function Home() {
       </Grid>
     </div>
   );
-}
+      }
