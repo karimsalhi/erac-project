@@ -3,7 +3,13 @@ import ListItemText from "@mui/material/ListItemText";
 import { useNavigate, useParams } from "react-router-dom";
 import { qcm1, qcm2, qcm3 } from "../Data/QcmData/QcmData";
 import { useEffect, useState } from "react";
-import { Button, Grid, ListItemButton, Typography } from "@mui/material";
+import {
+  Button,
+  Grid,
+  ListItemButton,
+  TextField,
+  Typography,
+} from "@mui/material";
 import { CountdownCircleTimer } from "react-countdown-circle-timer";
 import CorrectionModal from "../CorrectionModal/CorrectionModal";
 
@@ -30,7 +36,7 @@ export default function Qcm() {
       setCounter(maxTime);
       setQcm(qcm2);
     } else if (id === "3") {
-      navigate("/qcm/form");
+      setCounter(maxTime);
     } else if (id === "4") {
       navigate("/qcm/anxiety");
     }
@@ -83,17 +89,30 @@ export default function Qcm() {
             {({ remainingTime }) => remainingTime}
           </CountdownCircleTimer>
         )}
-        <Typography variant="h2">{qcm.question}</Typography>
-        {qcm.answers.map((answer, index) => (
-          <ListItemButton
-            key={index}
-            sx={{ marginTop: "2rem" }}
-            selected={selectedIndex === index}
-            onClick={(event) => handleClick(event, index)}
-          >
-            <ListItemText primary={answer} />
-          </ListItemButton>
-        ))}
+        {id !== "3" ? (
+          <>
+            <Typography variant="h2">{qcm.question}</Typography>
+            {qcm.answers.map((answer, index) => (
+              <ListItemButton
+                key={index}
+                sx={{ marginTop: "2rem" }}
+                selected={selectedIndex === index}
+                onClick={(event) => handleClick(event, index)}
+              >
+                <ListItemText primary={answer} />
+              </ListItemButton>
+            ))}
+          </>
+        ) : (
+          <>
+            <Typography variant="h2">Question</Typography>
+            <TextField
+              id="outlined-basic"
+              label="Outlined"
+              variant="outlined"
+            />
+          </>
+        )}
         {counter === 0 && (
           <>
             <CorrectionModal />
