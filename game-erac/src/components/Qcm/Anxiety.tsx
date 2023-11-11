@@ -32,7 +32,8 @@ export default function Anxiety() {
         }}
         component="nav"
         aria-label="anxiety scale"
-      >
+        >
+
         <Typography variant="h3" gutterBottom>
           Sur une échelle de 1 à 10, combien êtes-vous anxieux(se)?
         </Typography>

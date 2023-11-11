@@ -1,21 +1,18 @@
-import React, { useEffect, useState } from 'react';
+import List from "@mui/material/List";
+import ListItemText from "@mui/material/ListItemText";
+import { useNavigate, useParams } from "react-router-dom";
+import { qcm1, qcm2 } from "../Data/QcmData/QcmData";
+import { useEffect, useState } from "react";
 import {
   Alert,
   Button,
   Grid,
-  List,
   ListItemButton,
-  ListItemText,
   TextField,
   Typography,
-  Paper,
-  Box,
-} from '@mui/material';
-import { useNavigate, useParams } from 'react-router-dom';
-import { qcm1, qcm2 } from '../Data/QcmData/QcmData';
-import { CountdownCircleTimer } from 'react-countdown-circle-timer';
-import CorrectionModal from '../CorrectionModal/CorrectionModal';
-
+} from "@mui/material";
+import { CountdownCircleTimer } from "react-countdown-circle-timer";
+import CorrectionModal from "../CorrectionModal/CorrectionModal";
 
 type Qcm = {
   id: number;
@@ -78,7 +75,7 @@ export default function Qcm() {
   };
 
   const handleInputClick = () => {
-    if (input == "30") {
+    if (input == "95") {
       setCorrect("True");
       setCounter(0);
     } else {
@@ -90,25 +87,22 @@ export default function Qcm() {
     <Grid
       container
       sx={{
-        minHeight: '100vh',
-        padding: 2,
-        backgroundImage: `url("../../../assets/game.png")`,
-        alignItems: 'center',
-        justifyContent: 'center',
+        spacing: 0,
+        direction: "column",
+        alignItems: "center",
+        justifyContent: "center",
       }}
+      style={{ minHeight: "100vh" }}
     >
-      <Paper
-        elevation={6}
+      <List
         sx={{
-          maxWidth: 500,
-          my: 4,
-          py: 4,
-          px: 3,
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          borderRadius: '5%',
+          width: "100%",
+          maxWidth: 360,
+          bgcolor: "background.paper",
+          borderRadius: "5%",
         }}
+        component="nav"
+        aria-label="mailbox folders"
       >
         {counter > 0 && (
           <CountdownCircleTimer
@@ -125,40 +119,46 @@ export default function Qcm() {
             {({ remainingTime }) => remainingTime}
           </CountdownCircleTimer>
         )}
-        <Typography variant="h5" gutterBottom component="div" sx={{ fontWeight: 'medium', color: 'primary.main', mb: 3 }}>
-          {qcm.question}
-        </Typography>
-        <List component="nav" aria-label="quiz options" sx={{ width: '100%' }}>
-          {qcm.answers.map((answer, index) => (
-            <ListItemButton
-              key={index}
+        {id !== "3" ? (
+          <>
+            <Typography variant="h4">{qcm.question}</Typography>
+            {qcm.answers.map((answer, index) => (
+              <ListItemButton
+                key={index}
                 sx={{ marginTop: "2rem" }}
                 selected={selectedIndex === index}
                 onClick={(event) => handleClick(event, index)}
-            >
-              <ListItemText primary={answer} />
-            </ListItemButton>
-          ))}
-        </List>
-        {counter === 0 && (
+              >
+                <ListItemText primary={answer} />
+              </ListItemButton>
+            ))}
+          </>
+        ) : (
           <>
-            <CorrectionModal />
-            <Button
-              variant="contained"
-              color="primary"
-              onClick={handleNext}
-              sx={{ mt: 3 }}
-            >
-              Suivant
-            </Button>
+            <Typography variant="h4">
+              Quel est le taux de réussite d'une appendicectomie ?
+            </Typography>
+            <TextField
+              id="outlined-basic"
+              label="Outlined"
+              variant="outlined"
+              onChange={(e) => setInput(e.target.value)}
+              value={input}
+            />
+            <Button onClick={handleInputClick}>Soumettre</Button>
           </>
         )}
-        {correct !== "" && (
-          <Alert severity={correct === "True" ? "success" : "error"} sx={{ mt: 3 }}>
-            {correct === "True" ? "Bonne Réponse!" : "Mauvaise Réponse!"}
-          </Alert>
+        {counter === 0 && (
+          <>
+            <CorrectionModal id={id} />
+            <Button onClick={handleNext}>Suivant</Button>
+          </>
         )}
-      </Paper>
+        {correct === "True" && <Alert severity="success">Bonne Réponse</Alert>}
+        {correct === "False" && (
+          <Alert severity="error">Mauvaise Réponse</Alert>
+        )}
+      </List>
     </Grid>
   );
 }
