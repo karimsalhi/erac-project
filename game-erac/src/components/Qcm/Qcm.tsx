@@ -108,25 +108,27 @@ export default function Qcm() {
         alignItems: "center",
         justifyContent: "center",
       }}
-      style={{ minHeight: "100vh" }}
+      style={{ minHeight: "70vh" }}
     >
       <Box sx={{ width: "100%", display: "flex", justifyContent: "center" }}>
         <StyledPaper elevation={3}>
           <List component="nav" aria-label="mailbox folders">
             {counter > 0 && (
-              <CountdownCircleTimer
-                isPlaying
-                duration={maxTime}
-                colors={["#004777", "#F7B801", "#A30000", "#A30000"]}
-                colorsTime={[(maxTime * 3) / 4, maxTime / 2, maxTime / 4, 0]}
-                size={100}
-                onComplete={() => {
-                  setCounter(0);
-                  return;
-                }}
-              >
-                {({ remainingTime }) => remainingTime}
-              </CountdownCircleTimer>
+              <Box sx={{ display: "flex", justifyContent: "center" }}>
+                <CountdownCircleTimer
+                  isPlaying
+                  duration={maxTime}
+                  colors={["#004777", "#F7B801", "#A30000", "#A30000"]}
+                  colorsTime={[(maxTime * 3) / 4, maxTime / 2, maxTime / 4, 0]}
+                  size={100}
+                  onComplete={() => {
+                    setCounter(0);
+                    return;
+                  }}
+                >
+                  {({ remainingTime }) => remainingTime}
+                </CountdownCircleTimer>
+              </Box>
             )}
             {id !== "3" ? (
               <>
