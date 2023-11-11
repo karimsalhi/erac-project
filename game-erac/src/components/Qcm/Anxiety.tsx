@@ -43,7 +43,7 @@ export default function Anxiety() {
             max={10}
           />
         </Box>
-        <Button onClick={() => navigate("/qcm/1")}>Suivant</Button>
+        <Button onClick={() => navigate("/loading-start")}>Suivant</Button>
       </List>
     </Grid>
   );
