@@ -1,7 +1,6 @@
-import "./App.css";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import Home from "./assets/components/Home/Home";
-import Qcm from "./assets/components/Qcm/Qcm";
+import Home from "./components/Home/Home";
+import Qcm from "./components/Qcm/Qcm";
 
 const router = createBrowserRouter([
   {
@@ -12,7 +11,7 @@ const router = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: "qcm",
+        path: "qcm/:id",
         element: <Qcm />,
       },
     ],
