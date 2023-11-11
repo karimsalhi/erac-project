@@ -1,6 +1,7 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Home from "./components/Home/Home";
 import Qcm from "./components/Qcm/Qcm";
+import Appendicite from "./components/Appendicite/Appendicite";
 
 const router = createBrowserRouter([
   {
@@ -9,6 +10,10 @@ const router = createBrowserRouter([
       {
         path: "",
         element: <Home />,
+      },
+      {
+        path: "/appendicite",
+        element: <Appendicite />,
       },
       {
         path: "qcm/:id",

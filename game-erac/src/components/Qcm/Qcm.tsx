@@ -15,7 +15,7 @@ type Qcm = {
 
 export default function Qcm() {
   const navigate = useNavigate();
-  const maxTime = 2;
+  const maxTime = 10;
   const [counter, setCounter] = useState(3);
   const [qcm, setQcm] = useState<Qcm>({ id: 0, question: "", answers: [] });
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
