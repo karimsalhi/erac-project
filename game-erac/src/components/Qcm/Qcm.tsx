@@ -8,11 +8,14 @@ import {
   Button,
   Grid,
   ListItemButton,
+  Paper,
   TextField,
   Typography,
+  Box,
 } from "@mui/material";
 import { CountdownCircleTimer } from "react-countdown-circle-timer";
 import CorrectionModal from "../CorrectionModal/CorrectionModal";
+import { styled } from '@mui/material/styles';
 
 type Qcm = {
   id: number;
@@ -20,6 +23,19 @@ type Qcm = {
   answers: Array<string>;
   correctAnswer: number;
 };
+
+const StyledPaper = styled(Paper)(({ theme }) => ({
+  width: '100%',
+  maxWidth: 360,
+  margin: theme.spacing(2),
+  padding: theme.spacing(2),
+  backgroundColor: theme.palette.background.paper,
+  boxShadow: theme.shadows[5],
+  borderRadius: theme.shape.borderRadius,
+  '&:hover': {
+    boxShadow: theme.shadows[10],
+  },
+}));
 
 export default function Qcm() {
   const navigate = useNavigate();
@@ -84,27 +100,11 @@ export default function Qcm() {
   };
 
   return (
-    <Grid
-      container
-      sx={{
-        spacing: 0,
-        direction: "column",
-        alignItems: "center",
-        justifyContent: "center",
-      }}
-      style={{ minHeight: "100vh" }}
-    >
-      <List
-        sx={{
-          width: "100%",
-          maxWidth: 360,
-          bgcolor: "background.paper",
-          borderRadius: "5%",
-        }}
-        component="nav"
-        aria-label="mailbox folders"
-      >
-        {counter > 0 && (
+    <Grid container sx={{ spacing: 0, direction: "column", alignItems: "center", justifyContent: "center" }} style={{ minHeight: "100vh" }}>
+      <Box sx={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
+        <StyledPaper elevation={3}>
+          <List component="nav" aria-label="mailbox folders">
+          {counter > 0 && (
           <CountdownCircleTimer
             isPlaying
             duration={maxTime}
@@ -145,20 +145,31 @@ export default function Qcm() {
               onChange={(e) => setInput(e.target.value)}
               value={input}
             />
-            <Button onClick={handleInputClick}>Soumettre</Button>
+            <Button
+  className="button-lower"
+  variant="contained"
+  color="primary"
+  onClick={handleInputClick}>
+  Soumettre
+</Button>
           </>
         )}
         {counter === 0 && (
           <>
             <CorrectionModal id={id} />
-            <Button onClick={handleNext}>Suivant</Button>
+            <Button
+          variant="contained"
+          color="primary"
+          onClick={(handleNext)}>Suivant</Button>
           </>
         )}
         {correct === "True" && <Alert severity="success">Bonne Réponse</Alert>}
         {correct === "False" && (
           <Alert severity="error">Mauvaise Réponse</Alert>
         )}
-      </List>
+          </List>
+        </StyledPaper>
+      </Box>
     </Grid>
   );
 }
