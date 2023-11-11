@@ -1,9 +1,10 @@
 import List from "@mui/material/List";
 import ListItemText from "@mui/material/ListItemText";
 import { useNavigate, useParams } from "react-router-dom";
-import { qcm1, qcm2, qcm3 } from "../Data/QcmData/QcmData";
+import { qcm1, qcm2 } from "../Data/QcmData/QcmData";
 import { useEffect, useState } from "react";
 import {
+  Alert,
   Button,
   Grid,
   ListItemButton,
@@ -17,13 +18,20 @@ type Qcm = {
   id: number;
   question: string;
   answers: Array<string>;
+  correctAnswer: number;
 };
 
 export default function Qcm() {
   const navigate = useNavigate();
   const maxTime = 10;
   const [counter, setCounter] = useState(3);
-  const [qcm, setQcm] = useState<Qcm>({ id: 0, question: "", answers: [] });
+  const [correct, setCorrect] = useState("");
+  const [qcm, setQcm] = useState<Qcm>({
+    id: 0,
+    question: "",
+    answers: [],
+    correctAnswer: 0,
+  });
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
 
   const params = useParams();
@@ -51,6 +59,12 @@ export default function Qcm() {
     index: number
   ) => {
     setSelectedIndex(index);
+    if (index == qcm.correctAnswer) {
+      setCorrect("True");
+      setCounter(0);
+    } else {
+      setCorrect("False");
+    }
   };
 
   return (
@@ -119,6 +133,8 @@ export default function Qcm() {
             <Button onClick={handleNext}>Suivant</Button>
           </>
         )}
+        {correct === "True" && <Alert severity="success">Correct answer</Alert>}
+        {correct === "False" && <Alert severity="error">Wrong answer</Alert>}
       </List>
     </Grid>
   );
