@@ -93,7 +93,7 @@ Le jeu est un Quizz qui se présente sous forme de questions à choix multiples 
 
 ![](assets/game.png)  
 
-L'objetif est de répondre aux questions avant la fin du temps imparti.  
+L'objectif est de répondre aux questions avant la fin du temps imparti.  
 A la fin de chaque question, la réponse est donnée avec une explication approfondie et ludique pour permettre aux patients de mieux comprendre les interventions chirurgicales et les risques qui y sont associés.  
 Les questions sont mises en place de façon intelligente en fonction des questions qui rassurent le plus le patient et qui permettent de mieux le préparer à l'intervention. 
   
