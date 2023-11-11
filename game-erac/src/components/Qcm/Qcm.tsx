@@ -16,7 +16,7 @@ type Qcm = {
 export default function Qcm() {
   const navigate = useNavigate();
   const maxTime = 2;
-  const [counter, setCounter] = useState(maxTime);
+  const [counter, setCounter] = useState(3);
   const [qcm, setQcm] = useState<Qcm>({ id: 0, question: "", answers: [] });
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
 
@@ -24,14 +24,17 @@ export default function Qcm() {
   const id = params.id;
   useEffect(() => {
     if (id === "1") {
+      setCounter(maxTime);
       setQcm(qcm1);
     } else if (id === "2") {
+      setCounter(maxTime);
       setQcm(qcm2);
     } else if (id === "3") {
+      setCounter(maxTime);
       setQcm(qcm3);
     }
     counter > 0 && setTimeout(() => setCounter(counter - 1), 1000);
-  }, [id, counter]);
+  }, [id]);
 
   const handleNext = () => {
     navigate(`/qcm/${parseInt(id) + 1}`);
