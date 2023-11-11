@@ -5,6 +5,7 @@ import { qcm1, qcm2, qcm3 } from "../Data/QcmData/QcmData";
 import { useEffect, useState } from "react";
 import { Grid, ListItemButton, Typography } from "@mui/material";
 import { CountdownCircleTimer } from "react-countdown-circle-timer";
+import CorrectionModal from "../CorrectionModal/CorrectionModal";
 
 type Qcm = {
   id: number;
@@ -83,6 +84,7 @@ export default function Qcm() {
             <ListItemText primary={answer} />
           </ListItemButton>
         ))}
+        {counter === 0 && <CorrectionModal />}
       </List>
     </Grid>
   );
