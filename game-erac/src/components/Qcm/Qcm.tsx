@@ -26,6 +26,7 @@ export default function Qcm() {
   const maxTime = 10;
   const [counter, setCounter] = useState(3);
   const [correct, setCorrect] = useState("");
+  const [input, setInput] = useState("");
   const [qcm, setQcm] = useState<Qcm>({
     id: 0,
     question: "",
@@ -63,6 +64,15 @@ export default function Qcm() {
   ) => {
     setSelectedIndex(index);
     if (index == qcm.correctAnswer) {
+      setCorrect("True");
+      setCounter(0);
+    } else {
+      setCorrect("False");
+    }
+  };
+
+  const handleInputClick = () => {
+    if (input == "30") {
       setCorrect("True");
       setCounter(0);
     } else {
@@ -127,7 +137,10 @@ export default function Qcm() {
               id="outlined-basic"
               label="Outlined"
               variant="outlined"
+              onChange={(e) => setInput(e.target.value)}
+              value={input}
             />
+            <Button onClick={handleInputClick}>Submit</Button>
           </>
         )}
         {counter === 0 && (
