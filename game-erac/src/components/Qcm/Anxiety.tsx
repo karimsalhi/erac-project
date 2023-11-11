@@ -1,7 +1,7 @@
-import { Grid, List, Typography, Box, Slider, Button } from '@mui/material';
-import { useNavigate } from 'react-router-dom';
+import { Grid, List, Typography, Box, Slider, Button } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
-function valuetext(value :number) {
+function valuetext(value: number) {
   return `${value}°C`;
 }
 
@@ -11,33 +11,32 @@ export default function Anxiety() {
     <Grid
       container
       sx={{
-        height: '100vh',
+        height: "100vh",
         backgroundImage: `url("../../../assets/game5.png")`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        direction: 'column',
-        alignItems: 'center',
-        justifyContent: 'center',
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        direction: "column",
+        alignItems: "center",
+        justifyContent: "center",
       }}
     >
       <List
         sx={{
-          width: '100%',
+          width: "100%",
           maxWidth: 360,
-          bgcolor: 'rgba(255, 255, 255, 0.85)',
+          bgcolor: "rgba(255, 255, 255, 0.85)",
           borderRadius: 2,
           boxShadow: 3,
           padding: 4,
-          textAlign: 'center',
+          textAlign: "center",
         }}
         component="nav"
         aria-label="anxiety scale"
-        >
-
-        <Typography variant="h3" gutterBottom>
+      >
+        <Typography variant="h4" gutterBottom>
           Sur une échelle de 1 à 10, combien êtes-vous anxieux(se)?
         </Typography>
-        <Box sx={{ width: 300, margin: 'auto' }}>
+        <Box sx={{ width: 300, margin: "auto" }}>
           <Slider
             aria-label="Anxiety level"
             defaultValue={3}
@@ -49,9 +48,9 @@ export default function Anxiety() {
             max={10}
           />
         </Box>
-        <Button 
-          variant="contained" 
-          color="primary" 
+        <Button
+          variant="contained"
+          color="primary"
           onClick={() => navigate("/loading-start")}
           sx={{ marginTop: 4 }}
         >
