@@ -39,12 +39,15 @@ export default function Qcm() {
   useEffect(() => {
     if (id === "1") {
       setCounter(maxTime);
+      setCorrect("");
       setQcm(qcm1);
     } else if (id === "2") {
       setCounter(maxTime);
+      setCorrect("");
       setQcm(qcm2);
     } else if (id === "3") {
       setCounter(maxTime);
+      setCorrect("");
     } else if (id === "4") {
       navigate("/qcm/anxiety");
     }
