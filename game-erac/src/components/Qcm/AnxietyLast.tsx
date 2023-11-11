@@ -1,14 +1,11 @@
-import {
-  Grid,
-  List,
-  Typography,
-  ListItemButton,
-  ListItemText,
-} from "@mui/material";
+import { Grid, List, Typography, Box, Slider, Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 
+function valuetext(value: number) {
+  return `${value}°C`;
+}
+
 export default function AnxietyLast() {
-  const levels = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
   const navigate = useNavigate();
   return (
     <Grid
@@ -32,15 +29,19 @@ export default function AnxietyLast() {
         aria-label="mailbox folders"
       >
         <Typography variant="h3">Votre Anxiety</Typography>
-        {levels.map((answer, index) => (
-          <ListItemButton
-            key={index}
-            sx={{ marginTop: "1rem" }}
-            onClick={() => navigate("/result")}
-          >
-            <ListItemText primary={answer} />
-          </ListItemButton>
-        ))}
+        <Box sx={{ width: 300 }}>
+          <Slider
+            aria-label="Temperature"
+            defaultValue={3}
+            getAriaValueText={valuetext}
+            valueLabelDisplay="auto"
+            step={1}
+            marks
+            min={0}
+            max={10}
+          />
+        </Box>
+        <Button onClick={() => navigate("/result")}>Suivant</Button>
       </List>
     </Grid>
   );

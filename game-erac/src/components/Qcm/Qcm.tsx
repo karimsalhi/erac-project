@@ -41,12 +41,15 @@ export default function Qcm() {
     if (id === "1") {
       setCounter(maxTime);
       setCorrect("");
+      setSelectedIndex(null);
       setQcm(qcm1);
     } else if (id === "2") {
       setCounter(maxTime);
       setCorrect("");
+      setSelectedIndex(null);
       setQcm(qcm2);
     } else if (id === "3") {
+      setSelectedIndex(null);
       setCounter(maxTime);
       setCorrect("");
     } else if (id === "4") {
