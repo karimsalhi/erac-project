@@ -1,13 +1,8 @@
-import step1 from "../../assets/step1.jpg";
+import "../Home/Home.css";
 
 export default function Home() {
   return (
-    <div
-      style={{
-        backgroundImage: `url(${step1})`,
-        // Insert Here
-      }}
-    >
+    <div className="Home">
       Home
     </div>
   );
