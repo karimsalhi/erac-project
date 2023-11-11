@@ -10,34 +10,33 @@
 
 .question-list {
   background-color: white;
-  padding: 40px; /* Increased padding for more space inside */
-  border-radius: 15px; /* Larger border radius for rounded edges */
-  box-shadow: 0 10px 25px rgba(0,0,0,0.1); /* Larger shadow for a subtle 3D effect */
-  width: 80%; /* Adjust width as needed */
-  max-width: 600px; /* Maximum width to maintain aesthetics on larger screens */
-  margin: auto; /* Center the container on the page */
-  text-align: center; /* Center-align the text */
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  width: 80%;
+  max-width: 600px;
+  margin: auto;
+  text-align: center;
 }
 
 
 .question-title {
-  font-size: 2rem; /* Larger font size for the title */
-  margin-bottom: 1.5rem; /* More space between title and options */
-  color: #333; /* Dark color for text (optional) */
-  text-transform: uppercase; /* UPPERCASE styling for the title (optional) */
-  letter-spacing: 1.5px; /* Add some spacing between letters (optional) */
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #333;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
 }
 
-/* Styling for each option */
 .question-button {
   display: block;
-  margin: 10px 0; /* Space between options */
-  padding: 15px 0; /* Padding for top and bottom */
+  margin: 10px 0;
+  padding: 15px 0;
   border: none;
-  border-radius: 5px; /* Rounded corners for options/buttons */
-  background-color: #f8f8f8; /* Light grey background for options */
+  border-radius: 5px;
+  background-color: #f8f8f8;
   cursor: pointer;
-  transition: background-color 0.3s, box-shadow 0.3s; /* Smooth transition for hover effects */
+  transition: background-color 0.3s, box-shadow 0.3s;
 }
 
 .question-button:hover {

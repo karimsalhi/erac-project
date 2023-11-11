@@ -1,31 +1,37 @@
-import { Grid, List, Typography, Button } from "@mui/material";
-import { useNavigate } from "react-router-dom";
+import { Grid, List, Typography, Button } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
 
 export default function Appendicite() {
   const navigate = useNavigate();
+
   return (
     <Grid
       container
       sx={{
-        spacing: 0,
-        direction: "column",
-        alignItems: "center",
-        justifyContent: "center",
+        height: '100vh',
+        backgroundImage: `url("../../../assets/game5.png")`,
+        alignItems: 'center',
+        justifyContent: 'center',
       }}
-      style={{ minHeight: "100vh" }}
     >
       <List
         sx={{
-          width: "100%",
-          maxWidth: 360,
-          bgcolor: "background.paper",
-          borderRadius: "5%",
+          width: '100%',
+          maxWidth: { xs: '90%', sm: 600 },
+          bgcolor: 'background.paper',
+          borderRadius: 3,
+          boxShadow: 3,
+          padding: 4,
+          overflow: 'hidden',
         }}
         component="nav"
-        aria-label="mailbox folders"
+        aria-label="information"
       >
-        <Typography>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
+        <Typography variant="h5" component="h2" gutterBottom sx={{ fontWeight: 'bold', textAlign: 'center', marginBottom: 3 }}>
+          Appendicite Information
+        </Typography>
+        <Typography variant="body1" gutterBottom sx={{ textAlign: 'justify', marginBottom: 3 }}>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
           at erat eu ipsum molestie elementum sed ut nunc. Donec et tellus ut
           massa viverra placerat eu et nibh. Morbi condimentum ipsum vitae velit
           sollicitudin blandit. Phasellus in lorem odio. Quisque nec velit
@@ -46,8 +52,20 @@ export default function Appendicite() {
           libero interdum, quis cursus elit rutrum. Donec lacinia sapien eu
           purus vehicula convallis. Sed porttitor venenatis justo ut laoreet.
         </Typography>
-        <Button onClick={() => navigate("/qcm/anxiety")}>Commencer</Button>
+        <Button 
+          variant="contained" 
+          color="primary" 
+          onClick={() => navigate("/qcm/anxiety")}
+          sx={{
+            marginTop: 3,
+            padding: '10px 25px',
+          }}
+        >
+          Commencer
+        </Button>
       </List>
     </Grid>
   );
 }
+
+

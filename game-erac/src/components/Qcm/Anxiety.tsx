@@ -1,48 +1,61 @@
-import { Grid, List, Typography, Box, Slider, Button } from "@mui/material";
-import { useNavigate } from "react-router-dom";
+import { Grid, List, Typography, Box, Slider, Button } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
 
-function valuetext(value: number) {
+function valuetext(value :number) {
   return `${value}°C`;
 }
 
 export default function Anxiety() {
-  const levels = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
   const navigate = useNavigate();
   return (
     <Grid
       container
       sx={{
-        spacing: 0,
-        direction: "column",
-        alignItems: "center",
-        justifyContent: "center",
+        height: '100vh',
+        backgroundImage: `url("../../../assets/game5.png")`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        direction: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
       }}
-      style={{ minHeight: "100vh" }}
     >
       <List
         sx={{
-          width: "100%",
+          width: '100%',
           maxWidth: 360,
-          bgcolor: "background.paper",
-          borderRadius: "5%",
+          bgcolor: 'rgba(255, 255, 255, 0.85)',
+          borderRadius: 2,
+          boxShadow: 3,
+          padding: 4,
+          textAlign: 'center',
         }}
         component="nav"
-        aria-label="mailbox folders"
+        aria-label="anxiety scale"
       >
-        <Typography variant="h3">Sur une échelle de 1 à 10 combien êtes-vous anxieux(se)?</Typography>
-        <Box sx={{ width: 300 }}>
+        <Typography variant="h3" gutterBottom>
+          Sur une échelle de 1 à 10, combien êtes-vous anxieux(se)?
+        </Typography>
+        <Box sx={{ width: 300, margin: 'auto' }}>
           <Slider
-            aria-label="Temperature"
+            aria-label="Anxiety level"
             defaultValue={3}
             getAriaValueText={valuetext}
             valueLabelDisplay="auto"
             step={1}
             marks
-            min={0}
+            min={1}
             max={10}
           />
         </Box>
-        <Button onClick={() => navigate("/qcm/1")}>Suivant</Button>
+        <Button 
+          variant="contained" 
+          color="primary" 
+          onClick={() => navigate("/qcm/1")}
+          sx={{ marginTop: 4 }}
+        >
+          Suivant
+        </Button>
       </List>
     </Grid>
   );
