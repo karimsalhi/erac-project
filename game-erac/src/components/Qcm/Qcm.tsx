@@ -135,7 +135,9 @@ export default function Qcm() {
           </>
         ) : (
           <>
-            <Typography variant="h4">Quel est le taux de réussite d'une appendicectomie ?</Typography>
+            <Typography variant="h4">
+              Quel est le taux de réussite d'une appendicectomie ?
+            </Typography>
             <TextField
               id="outlined-basic"
               label="Outlined"
@@ -148,12 +150,14 @@ export default function Qcm() {
         )}
         {counter === 0 && (
           <>
-            <CorrectionModal />
+            <CorrectionModal id={id} />
             <Button onClick={handleNext}>Suivant</Button>
           </>
         )}
         {correct === "True" && <Alert severity="success">Bonne Réponse</Alert>}
-        {correct === "False" && <Alert severity="error">Mauvaise Réponse</Alert>}
+        {correct === "False" && (
+          <Alert severity="error">Mauvaise Réponse</Alert>
+        )}
       </List>
     </Grid>
   );

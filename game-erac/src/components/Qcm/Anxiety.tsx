@@ -6,7 +6,6 @@ function valuetext(value: number) {
 }
 
 export default function Anxiety() {
-  const levels = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
   const navigate = useNavigate();
   return (
     <Grid
@@ -29,7 +28,9 @@ export default function Anxiety() {
         component="nav"
         aria-label="mailbox folders"
       >
-        <Typography variant="h4">Sur une échelle de 1 à 10 combien êtes-vous anxieux(se)?</Typography>
+        <Typography variant="h4">
+          Sur une échelle de 1 à 10 combien êtes-vous anxieux(se)?
+        </Typography>
         <Box sx={{ width: 300 }}>
           <Slider
             aria-label="Temperature"

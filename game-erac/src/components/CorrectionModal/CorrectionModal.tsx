@@ -16,7 +16,7 @@ const style = {
   p: 4,
 };
 
-export default function CorrectionModal() {
+export default function CorrectionModal(id) {
   const [open, setOpen] = React.useState(true);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -24,21 +24,77 @@ export default function CorrectionModal() {
   return (
     <div>
       <Button onClick={handleOpen}>La reponse</Button>
-      <Modal
-        open={open}
-        onClose={handleClose}
-        aria-labelledby="modal-modal-title"
-        aria-describedby="modal-modal-description"
-      >
-        <Box sx={style}>
-          <Typography id="modal-modal-title" variant="h6" component="h2">
-            Text in a modal
-          </Typography>
-          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-            Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
-          </Typography>
-        </Box>
-      </Modal>
+      {id.id === "1" && (
+        <Modal
+          open={open}
+          onClose={handleClose}
+          aria-labelledby="modal-modal-title"
+          aria-describedby="modal-modal-description"
+        >
+          <Box sx={style}>
+            <Typography id="modal-modal-title" variant="h6" component="h2">
+              Réponse correcte : C. Faible
+            </Typography>
+            <Typography id="modal-modal-title" variant="h6" component="h2">
+              Explication
+            </Typography>
+            <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+              Les complications suite à une appendicectomie sont rares. Dans la
+              grande majorité des cas, les patients récupèrent rapidement et
+              sans souci. En fait, plus de 95% des interventions se passent très
+              bien, laissant les patients sans la moindre séquelle. Vous êtes
+              entre de bonnes mains, et l'équipe médicale est là pour veiller à
+              votre bien-être tout au long du processus.
+            </Typography>
+          </Box>
+        </Modal>
+      )}
+      {id.id === "2" && (
+        <Modal
+          open={open}
+          onClose={handleClose}
+          aria-labelledby="modal-modal-title"
+          aria-describedby="modal-modal-description"
+        >
+          <Box sx={style}>
+            <Typography id="modal-modal-title" variant="h6" component="h2">
+              Réponse correcte : C. 30 minutes
+            </Typography>
+            <Typography id="modal-modal-title" variant="h6" component="h2">
+              Explication
+            </Typography>
+            <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+              L'appendicectomie est habituellement une procédure rapide, prenant
+              environ 30 minutes à 1 heure, soit à peine plus longue qu'une
+              petite sieste. Pendant l'intervention, vous ne ressentirez aucune
+              douleur ni inconfort. À votre réveil, vous serez pris en charge
+              par une équipe attentionnée, et vous n'aurez aucune raison de vous
+              inquiéter. Votre bien-être est notre priorité.
+            </Typography>
+          </Box>
+        </Modal>
+      )}
+      {id.id === "3" && (
+        <Modal
+          open={open}
+          onClose={handleClose}
+          aria-labelledby="modal-modal-title"
+          aria-describedby="modal-modal-description"
+        >
+          <Box sx={style}>
+            <Typography id="modal-modal-title" variant="h6" component="h2">
+              Réponse correcte : D. 95%
+            </Typography>
+            <Typography id="modal-modal-title" variant="h6" component="h2">
+              Explication
+            </Typography>
+            <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+              L'appendicectomie est une opération couramment réussie, avec un
+              taux de réussite élevé.
+            </Typography>
+          </Box>
+        </Modal>
+      )}
     </div>
   );
 }
