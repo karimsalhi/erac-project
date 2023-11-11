@@ -1,10 +1,10 @@
 import List from "@mui/material/List";
-import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
 import { useParams } from "react-router-dom";
 import { qcm1, qcm2, qcm3 } from "../Data/QcmData/QcmData";
 import { useEffect, useState } from "react";
 import { Grid, ListItemButton, Typography } from "@mui/material";
+import { CountdownCircleTimer } from "react-countdown-circle-timer";
 
 type Qcm = {
   id: number;
@@ -13,6 +13,8 @@ type Qcm = {
 };
 
 export default function Qcm() {
+  const maxTime = 10;
+  const [counter, setCounter] = useState(maxTime);
   const [qcm, setQcm] = useState<Qcm>({ id: 0, question: "", answers: [] });
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
 
@@ -26,7 +28,8 @@ export default function Qcm() {
     } else if (id === "3") {
       setQcm(qcm3);
     }
-  }, [id]);
+    counter > 0 && setTimeout(() => setCounter(counter - 1), 1000);
+  }, [id, counter]);
 
   const handleClick = (
     event: React.MouseEvent<HTMLDivElement, MouseEvent>,
@@ -55,6 +58,20 @@ export default function Qcm() {
         component="nav"
         aria-label="mailbox folders"
       >
+        {counter > 0 && (
+          <CountdownCircleTimer
+            isPlaying
+            duration={maxTime}
+            colors={["#004777", "#F7B801", "#A30000", "#A30000"]}
+            colorsTime={[(maxTime * 3) / 4, maxTime / 2, maxTime / 4, 0]}
+            onComplete={() => {
+              setCounter(0);
+              return;
+            }}
+          >
+            {({ remainingTime }) => remainingTime}
+          </CountdownCircleTimer>
+        )}
         <Typography variant="h2">{qcm.question}</Typography>
         {qcm.answers.map((answer, index) => (
           <ListItemButton
