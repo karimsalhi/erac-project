@@ -12,6 +12,7 @@ import {
   TextField,
   Typography,
   Box,
+  Toolbar,
 } from "@mui/material";
 import { CountdownCircleTimer } from "react-countdown-circle-timer";
 import CorrectionModal from "../CorrectionModal/CorrectionModal";
@@ -132,11 +133,16 @@ export default function Qcm() {
             )}
             {id !== "3" ? (
               <>
-                <Typography variant="h4">{qcm.question}</Typography>
+                <Typography
+                  variant="h4"
+                  sx={{ textAlign: "center", marginTop: "1rem" }}
+                >
+                  {qcm.question}
+                </Typography>
                 {qcm.answers.map((answer, index) => (
                   <ListItemButton
                     key={index}
-                    sx={{ marginTop: "2rem" }}
+                    sx={{ marginTop: "1rem" }}
                     selected={selectedIndex === index}
                     onClick={(event) => handleClick(event, index)}
                   >
@@ -167,7 +173,7 @@ export default function Qcm() {
               </>
             )}
             {counter === 0 && (
-              <>
+              <Toolbar sx={{ justifyContent: "space-between" }}>
                 <CorrectionModal id={id} />
                 <Button
                   variant="contained"
@@ -176,7 +182,7 @@ export default function Qcm() {
                 >
                   Suivant
                 </Button>
-              </>
+              </Toolbar>
             )}
             {correct === "True" && (
               <Alert severity="success">Bonne Réponse</Alert>
