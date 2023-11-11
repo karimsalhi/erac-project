@@ -1,16 +1,10 @@
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
-import Divider from "@mui/material/Divider";
 import { useParams } from "react-router-dom";
 import { qcm1, qcm2, qcm3 } from "../Data/QcmData/QcmData";
 import { useEffect, useState } from "react";
-
-const style = {
-  width: "100%",
-  maxWidth: 360,
-  bgcolor: "background.paper",
-};
+import { Grid, Typography } from "@mui/material";
 
 type Qcm = {
   id: number;
@@ -33,12 +27,32 @@ export default function Qcm() {
   }, [id]);
 
   return (
-    <List sx={style} component="nav" aria-label="mailbox folders">
-      {qcm.answers.map((answer, index) => (
-        <ListItem button key={index}>
-          <ListItemText primary={answer} />
-        </ListItem>
-      ))}
-    </List>
+    <Grid
+      container
+      sx={{
+        spacing: 0,
+        direction: "column",
+        alignItems: "center",
+        justifyContent: "center",
+      }}
+      style={{ minHeight: "100vh" }}
+    >
+      <List
+        sx={{
+          width: "100%",
+          maxWidth: 360,
+          bgcolor: "background.paper",
+        }}
+        component="nav"
+        aria-label="mailbox folders"
+      >
+        <Typography variant="h2">{qcm.question}</Typography>
+        {qcm.answers.map((answer, index) => (
+          <ListItem button key={index} sx={{ marginTop: "2rem" }}>
+            <ListItemText primary={answer} />
+          </ListItem>
+        ))}
+      </List>
+    </Grid>
   );
 }
