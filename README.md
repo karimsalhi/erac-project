@@ -16,14 +16,14 @@
 - [Collaborateurs](#collaborateurs)  
 
 ## Introduction
-**ANXIGO** est un jeu web qui s'integre dans le protocol RAAC pour permettre aux patients de mieux  appréhender les interventions chirurgicales. L'objectif et de prevenir des problèmes post et pré opératoire en permettant aux patients de mieux comprendre les interventions chirurgicales et les risques qui y sont associés.  
+**ANXIGO** est un jeu web qui s'intégre dans le protocol RAAC. Il permet aux patients de mieux appréhender les interventions chirurgicales qu'ils pourraient subir. L'objectif sera de prévenir des problèmes post et pré opératoires en permettant aux patients de mieux comprendre les interventions chirurgicales et les risques qui y sont associés.  
 
-Ce repos contient le code source du jeu **ANXIGO** qui dans la version actuelle gére trois type d'interventions chirurgicales.  
+Ce repository contient le code source du jeu **ANXIGO** qui dans la version actuelle, gére trois types d'interventions chirurgicales.  
 
 ### Installation et lancement
 L'application est faite en react et peut être lancée en local en suivant les étapes suivantes:
-1. Cloner le repos
-2. Se rendre dans le dossier game-erac et Installer les dépendances avec `npm install`
+1. Cloner le repository
+2. Se rendre dans le dossier game-erac et installer les dépendances avec `npm install`
 3. Lancer le serveur avec `npm run dev`
 4. Se rendre sur `localhost:5173` pour accéder au jeu
 
@@ -31,9 +31,9 @@ L'application est faite en react et peut être lancée en local en suivant les �
 
 Le terme "**RAAC**" fait référence au "**Rétablissement Amélioré Après Chirurgie**" **(RAAC)**, également connu sous le nom de "**Fast Track**" en anglais. Il s'agit d'un ensemble de protocoles et de pratiques médicales visant à optimiser la récupération des patients après une intervention chirurgicale. L'objectif principal du RAAC est d'accélérer le rétablissement des patients, de réduire les complications postopératoires et de raccourcir la durée de séjour à l'hôpital.  
   
-Les principaux éléments du protocole RAAC incluent :  
+Les principaux éléments du protocole [RAAC](https://imsru.fr/protocole-de-rehabilitation-amelioree-apres-chirurgie-raac/) incluent :  
   
-1. **Préparation préopératoire**: Les patients sont préparés avant l'intervention chirurgicale avec des informations sur ce à quoi s'attendre, des instructions sur la nutrition, la gestion de la douleur et les informations postopératoires.
+1. **Préparation préopératoire**: Les patients sont préparés avant l'intervention chirurgicale avec des informations sur le déroulé de l'intervention, des instructions sur la nutrition, la gestion de la douleur et les informations postopératoires.
 
 2. Analgésie optimisée: Le contrôle de la douleur est géré de manière optimale, souvent en utilisant des techniques telles que l'analgésie contrôlée par le patient (PCA) et des médicaments spécifiques qui minimisent les effets secondaires.  
 
@@ -62,30 +62,30 @@ Notre objectif avec le jeu **ANXIGO** est d'augmenter ce chiffre à **95%**.
 - [Chirurgie thoracique](https://www.researchgate.net/profile/Francois-Montagne/publication/355266773_Recuperation_amelioree_apres_chirurgie_RAAC_thoracique/links/616dadf0b90c51266265d661/Recuperation-amelioree-apres-chirurgie-RAAC-thoracique.pdf)
 
 ## Jeu ANXIGO
-Notre jeu va  permettre aux médécins qui souhaitent utiliser le protocole RAAC de mieux préparer leurs patients en leur permettant de mieux comprendre les interventions chirurgicales et les risques qui y sont associés via des quiz ludiques. L'objectif est de reduire les problèmes post et pré opératoire en reduisant le stress des patients.
+Notre jeu va  permettre aux médecins qui souhaitent utiliser le protocole RAAC afin de mieux préparer leurs patients, en leur permettant de mieux comprendre les interventions chirurgicales et les risques qui y sont associés via des quiz ludiques. L'objectif est de réduire les problèmes post et pré opératoires en diminuant le stress des patients.
 
 ![](assets/logo.png)  
 
 ### Buisness Model
-Nos principaux clients sont les hôpitaux et les cliniques qui souhaitent utiliser le protocole RAAC. Nous allons leur proposer un systéme de *question as a service* comme methode de révenu. En gros ils paieront aux nombres de questionnaires complétés par mois.  
+Nos principaux clients sont les hôpitaux et les cliniques qui souhaitent utiliser le protocole RAAC. Nous leur proposerons un systéme de *question as a service* comme méthode de revenu. la rénumération sera effectuée en fonction du nombres de questionnaires complétés par mois.  
 
 Voici le **Business lean canvas** de notre projet:  
 
 ![](assets/business_model.jpg)
 
 ### Etude du marché
-Pour avoir un premier apperçu de la problématique que nous souhaitons traiter, qui est la reduction des problèmes post et pré opératoire, en offrant une meilleure préparation préopératoire aux patients, nous avons fait une étude de marché.  
+Pour avoir un premier apperçu de la problématique que nous souhaitons traiter, qui est la réduction des problèmes post et pré opératoire, en offrant une meilleure préparation pré-opératoire aux patients, nous avons fait une étude de marché.  
 
-Nous avons réalisé un sondage sur instagram auprès de 250 pérsonnes pour voir si le fait d'en apprendre plus sur les interventions qu'ils vont subir ou qu'ils ont subi les aideraient à mieux appréhender l'intervention.  
+Nous avons réalisé un sondage sur instagram auprès de 250 personnes pour voir si le fait d'en apprendre plus sur les interventions qu'ils vont subir ou qu'ils ont subi les aideraient à surmonter le stress engendré par l'intervention.  
 
 Voici les résultats de l'étude: 
 
 ![](assets/camembert.png)  
 
-Plus de **80%** des personnes interrogées ont répondu que le fait d'en apprendre plus sur les interventions qu'ils vont subir ou qu'ils ont subi les aideraient à mieux appréhender l'intervention.
+Plus de **80%** des personnes interrogées ont répondu que le fait d'en apprendre plus sur les interventions qu'ils vont subir où qu'ils ont subi les aideraient à mieux appréhender l'intervention.
 
 ### Présence en ligne
-Nous avons crée un site vitrine pour présenter notre projet et permettre aux clients de nous contacter. L'objectif est d'y publier nos études et les divers améliorations que nous envisageons d'apporter au projet.  
+Nous avons crée un site vitrine pour présenter notre projet et permettre aux clients de nous contacter. L'objectif est d'y publier nos études et les diverses améliorations que nous envisageons d'apporter au projet.  
 Le site est disponible à l'adresse suivante: [anxigo](https://killertottte.wixsite.com/anxigo)
 
 ### Game Play
@@ -116,7 +116,7 @@ Une idée du jeu au niveau du design serait de s'inspirer de l'univers Mario pou
 ![](assets/mario.png)  
 
 Il s'agit juste d'un croquis mais nous pensons faire des adaptations plus poussées et plus larges pour mieux cibler les patients et les aider au mieux à mieux appréhender l'intervention.  
-Il est question ici de faire la part des chose entre le côté ludique, informatif, pédagogique et pragmatique du jeu pour les differents profils de patients.  
+Il est question ici de faire la part des choses entre le côté ludique, informatif, pédagogique et pragmatique du jeu pour les differents profils de patients.  
   
 ## Collaborateurs
 - [Myriam WARD](https://www.linkedin.com/in/myriam-ward-71b4a9233)
