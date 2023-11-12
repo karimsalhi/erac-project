@@ -51,10 +51,10 @@ export default function AnxietyLast() {
         <Button
           variant="contained"
           color="primary"
-          onClick={() => navigate("/")}
+          onClick={() => navigate("/result")}
           sx={{ marginTop: 4 }}
         >
-          Retour au menu
+          Afficher les résultats
         </Button>
       </List>
     </Grid>
