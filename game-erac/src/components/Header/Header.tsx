@@ -1,28 +1,32 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import logo from "../../assets/logo.png";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import Container from "@mui/material/Container";
 import TextField from "@mui/material/TextField";
 import { Link, useNavigate } from "react-router-dom";
-import Autocomplete from '@mui/material/Autocomplete';
+import Autocomplete from "@mui/material/Autocomplete";
 import { Box, Button } from "@mui/material";
 
 function Header() {
   const navigate = useNavigate();
-  const [searchInput, setSearchInput] = useState('');
-  const colorOptions = ["Cholécystectomie", "Appendicectomie", "Césarienne", "Arthroplastie", "Mastectomie", "Scoliose","..."];
+  const [searchInput, setSearchInput] = useState("");
+  const colorOptions = [
+    "Cholécystectomie",
+    "Appendicectomie",
+    "Césarienne",
+    "Arthroplastie",
+    "Mastectomie",
+    "Scoliose",
+    "...",
+  ];
 
-
-  
   const handleSearchChange = (event) => {
     setSearchInput(event.target.value);
   };
 
-  
   const performSearch = () => {
-    
-    console.log('Searching for:', searchInput);
+    console.log("Searching for:", searchInput);
   };
 
   return (
@@ -62,23 +66,45 @@ function Header() {
             >
               Scoliose
             </Button>
+            <Button
+              key="arthroplastie"
+              onClick={() => navigate("/appendicite")}
+              sx={{ mx: 2, color: "white", display: "block" }}
+            >
+              Arthroplastie
+            </Button>
+            <Button
+              key="mastectomie"
+              onClick={() => navigate("/appendicite")}
+              sx={{ mx: 2, color: "white", display: "block" }}
+            >
+              Mastectomie
+            </Button>
+            <Button
+              key="cholécystectomie"
+              onClick={() => navigate("/appendicite")}
+              sx={{ mx: 2, color: "white", display: "block" }}
+            >
+              Cholécystectomie
+            </Button>
           </Box>
 
-          {}
-          <Autocomplete
-            freeSolo
-            options={colorOptions}
-            renderInput={(params) => (
-              <TextField
-                {...params}
-                label="Recherche ton intervention"
-                variant="outlined"
-                value={searchInput}
-                onChange={handleSearchChange}
-                sx={{ ml: 2, color: "white", background: "white", width: 350 }}
-              />
-            )}
-          />
+          {/*
+            <Autocomplete
+              freeSolo
+              options={colorOptions}
+              renderInput={(params) => (
+                <TextField
+                  {...params}
+                  label="Recherche ton intervention"
+                  variant="outlined"
+                  value={searchInput}
+                  onChange={handleSearchChange}
+                  sx={{ ml: 2, color: "white", background: "white", width: 350 }}
+                />
+              )}
+            />
+            */}
         </Toolbar>
       </Container>
     </AppBar>
@@ -86,4 +112,3 @@ function Header() {
 }
 
 export default Header;
-
